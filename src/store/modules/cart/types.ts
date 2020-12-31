@@ -11,4 +11,5 @@ export interface ICardItem {
 
 export interface ICartState {
   items: ICardItem[];
+  failedStockCheck: number[];
 }
