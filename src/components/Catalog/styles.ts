@@ -6,6 +6,7 @@ interface ContainerProps {
 
 export const Container = styled.div<ContainerProps>`
   width: 100%;
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   padding: 20px;
@@ -13,5 +14,7 @@ export const Container = styled.div<ContainerProps>`
   ${props => props.isCart && css`
     display: flex;
     flex-direction: column;
+
+    overflow-y: scroll;
   `}
 `;
