@@ -1,14 +1,15 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import Catalog from './components/Catalog';
-import Cart from './components/Cart';
-import store from './store'
+import Dashboard from './pages/Dashboard';
+import store from './store';
+
+import GlobalStyle from './styles/global';
 
 function App() {
   return (
     <Provider store={store}>
-      <Catalog />
-      <Cart />
+      <Dashboard />
+      <GlobalStyle />
     </Provider>
   );
 }
