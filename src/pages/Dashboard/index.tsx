@@ -10,7 +10,6 @@ function Dashboard() {
     <Container>
       <Header />
       <Catalog />
-      <Cart />
     </Container>
   );
 }

@@ -3,6 +3,8 @@ import api from '../../services/api';
 import { IProduct } from '../../store/modules/cart/types';
 import CatalogItem from '../CatalogItem';
 
+import { Container } from './styles';
+
 const Catalog: React.FC = () => {
   const [catalog, setCatalog] = useState<IProduct[]>([]);
 
@@ -10,16 +12,12 @@ const Catalog: React.FC = () => {
     api.get('products').then(response => setCatalog(response.data));
   }, []);
 
-
-
   return (
-    <main>
-      <h1>Catalog</h1>
-
+    <Container>
       {catalog.map(product => (
         <CatalogItem key={product.id} product={product} />
       ))}
-    </main>
+    </Container>
   );
 }
 
