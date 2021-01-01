@@ -31,10 +31,7 @@ export const HeaderButton = styled.button`
   color: #fff;
 
   border-radius: 5px;
-
-  &:nth-child(1) {
-    margin-right: 10px;
-  }
+  margin-right: 10px;
 
   transition: opacity 0.2s;
 
