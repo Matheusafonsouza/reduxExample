@@ -1,6 +1,10 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+interface ContainerProps {
+  isCart: boolean;
+}
+
+export const Container = styled.div<ContainerProps>`
   width: 150px;
   height: 200px;
   background: #F8AF00;
@@ -11,6 +15,11 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+
+  ${props => props.isCart && css`
+    margin-bottom: 30px;
+    width: 100%;
+  `}
 `;
 
 export const ItemButton = styled.button`

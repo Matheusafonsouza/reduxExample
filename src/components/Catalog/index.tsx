@@ -6,14 +6,18 @@ import CatalogItem from '../CatalogItem';
 
 import { Container } from './styles';
 
-const Catalog: React.FC = () => {
+interface CatalogProps {
+  isCart?: boolean;
+}
+
+const Catalog: React.FC<CatalogProps> = ({ isCart = false }) => {
 
   const catalog = useSelector<IState, IProduct[]>(state => state.stock.products);
 
   return (
-    <Container>
+    <Container isCart={isCart}>
       {catalog.map((product: IProduct) => (
-        <CatalogItem key={product.title} product={product} />
+        <CatalogItem key={product.title} product={product} isCart={isCart} />
       ))}
     </Container>
   );

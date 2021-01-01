@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { Container, CartDetail, CartItems, CartDetailHeader, CartDetailInfo } from './styles';
 
-function Cart() {
+const Cart: React.FC = () => {
 
   return (
     <Container>
@@ -20,7 +20,7 @@ function Cart() {
         </CartDetailInfo>
       </CartDetail>
       <CartItems>
-        <Catalog />
+        <Catalog isCart />
       </CartItems>
     </Container>
   );

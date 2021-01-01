@@ -12,10 +12,7 @@ const stock: Reducer<IStockState> = (state = INITIAL_STATE, action) => {
       case ProductActions.addProductToStock: {
         const { product } = action.payload;
 
-        console.log(product)
-
         const productInStockIndex = draft.products.findIndex(item => item.title === product.title);
-
 
         if (productInStockIndex >= 0) {
           draft.products[productInStockIndex].quantity += product.quantity;

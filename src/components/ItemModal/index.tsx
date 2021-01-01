@@ -25,7 +25,7 @@ const ItemModal: React.FC<ItemModalProps> = ({ open, setAddItemOpen }) => {
 
     dispatch(addProductToStock(product));
     setAddItemOpen(false);
-  }, [dispatch, productName, productQuantity, productValue]);
+  }, [dispatch, productName, productQuantity, productValue, setAddItemOpen]);
 
   return (
     <>
