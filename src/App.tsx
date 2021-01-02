@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import Dashboard from './pages/Dashboard';
+import Routes from './routes';
 import store from './store';
 
 import GlobalStyle from './styles/global';
@@ -8,7 +8,7 @@ import GlobalStyle from './styles/global';
 function App() {
   return (
     <Provider store={store}>
-      <Dashboard />
+      <Routes />
       <GlobalStyle />
     </Provider>
   );

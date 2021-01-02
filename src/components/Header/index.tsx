@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, HeaderButtons, HeaderButton } from './styles';
+import { Container, HeaderButtons, HeaderButton, CartButton } from './styles';
 
 import logoImg from '../../assets/logo.svg';
 
@@ -14,7 +14,7 @@ const Header: React.FC<HeaderProps> = ({ setAddItemOpen }) => {
       <img src={logoImg} alt="logo" />
 
       <HeaderButtons>
-        <HeaderButton>Carrinho</HeaderButton>
+        <CartButton to="/cart">Carrinho</CartButton>
         <HeaderButton onClick={() => setAddItemOpen(true)}>Adicionar</HeaderButton>
         <HeaderButton>Configurações</HeaderButton>
       </HeaderButtons>
