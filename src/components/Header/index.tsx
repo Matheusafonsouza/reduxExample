@@ -15,7 +15,11 @@ const Header: React.FC<HeaderProps> = ({ setAddItemOpen, setSeatch }) => {
     <Container>
       <div>
         <img src={logoImg} alt="logo" />
-        <input type="text" onChange={e => setSeatch(e.target.value)} />
+        <input
+          type="text"
+          placeholder="Digite o nome do produto aqui"
+          onChange={e => setSeatch(e.target.value)}
+        />
       </div>
 
       <HeaderButtons>

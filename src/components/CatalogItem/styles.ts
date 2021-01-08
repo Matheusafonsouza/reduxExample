@@ -17,6 +17,14 @@ export const Container = styled.div<ContainerProps>`
   justify-content: space-around;
   margin-bottom: 30px;
 
+  strong {
+    font-weight: 700;
+  }
+
+  span {
+    font-weight: 400;
+  }
+
   ${props => props.isCart && css`
     width: 100%;
     height: 200px;

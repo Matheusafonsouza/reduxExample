@@ -54,6 +54,12 @@ export const CartButton = styled(Link)`
   color: #fff;
   text-decoration: none;
 
+  font-size: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   border-radius: 5px;
   margin-right: 10px;
 
@@ -70,6 +76,8 @@ export const HeaderButton = styled.button`
   border: 0;
   background: #5F463A;
   color: #fff;
+
+  font-size: 15px;
 
   border-radius: 5px;
   margin-right: 10px;
