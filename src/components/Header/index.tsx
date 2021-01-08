@@ -6,12 +6,17 @@ import logoImg from '../../assets/logo.svg';
 
 interface HeaderProps {
   setAddItemOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setSeatch: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const Header: React.FC<HeaderProps> = ({ setAddItemOpen }) => {
+const Header: React.FC<HeaderProps> = ({ setAddItemOpen, setSeatch }) => {
+
   return (
     <Container>
-      <img src={logoImg} alt="logo" />
+      <div>
+        <img src={logoImg} alt="logo" />
+        <input type="text" onChange={e => setSeatch(e.target.value)} />
+      </div>
 
       <HeaderButtons>
         <CartButton to="/cart">Carrinho</CartButton>

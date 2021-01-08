@@ -7,12 +7,13 @@ import { Container } from './styles';
 
 function Dashboard() {
   const [addItemOpen, setAddItemOpen] = useState(false);
+  const [search, setSeatch] = useState('');
 
   return (
     <>
       <Container>
-        <Header setAddItemOpen={setAddItemOpen} />
-        <StockCatalog />
+        <Header setAddItemOpen={setAddItemOpen} setSeatch={setSeatch} />
+        <StockCatalog search={search} />
       </Container>
       <ItemModal open={addItemOpen} setAddItemOpen={setAddItemOpen} />
     </>

@@ -10,9 +10,31 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  img {
-    height: 80%;
-    margin-left: 30px;
+  > div:nth-child(1) {
+    height: 100%;
+    width: 30%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    img {
+      height: 80%;
+      margin-left: 30px;
+    }
+
+    input {
+      height: 50%;
+      width: 70%;
+      background: #5F463A;
+      border: 0;
+      padding: 0 10px;
+      color: #fff;
+
+      &:focus {
+        border: 2px solid #fff;
+      }
+    }
   }
 `;
 
