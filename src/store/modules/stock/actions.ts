@@ -8,3 +8,12 @@ export function addProductToStock(product: IProduct) {
     }
   };
 }
+
+export function removeOneFromStock(productName: string) {
+  return {
+    type: ProductActions.removeOneFromStock,
+    payload: {
+      productName,
+    }
+  };
+}

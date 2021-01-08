@@ -1,20 +1,20 @@
-export enum ActionTypes {
+export enum CartActions {
   addProductToCartRequest = 'ADD_PRODUCT_TO_CART_REQUEST',
   addProductToCartSuccess = 'ADD_PRODUCT_TO_CART_SUCCESS',
   addProductToCartFailure = 'ADD_PRODUCT_TO_CART_FAILURE',
 }
 export interface IProduct {
-  id: number;
   title: string;
   price: number;
+  quantity: number;
 }
 
-export interface ICardItem {
-  product: IProduct;
+export interface ICartProduct {
+  item: IProduct;
   quantity: number;
 }
 
 export interface ICartState {
-  items: ICardItem[];
-  failedStockCheck: number[];
+  products: ICartProduct[];
+  failedStockCheck: string[];
 }

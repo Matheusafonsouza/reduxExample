@@ -16,7 +16,6 @@ const Header: React.FC<HeaderProps> = ({ setAddItemOpen }) => {
       <HeaderButtons>
         <CartButton to="/cart">Carrinho</CartButton>
         <HeaderButton onClick={() => setAddItemOpen(true)}>Adicionar</HeaderButton>
-        <HeaderButton>Configurações</HeaderButton>
       </HeaderButtons>
     </Container>
   );

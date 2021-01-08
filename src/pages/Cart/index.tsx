@@ -1,5 +1,5 @@
 import React from 'react';
-import Catalog from '../../components/Catalog';
+import CartCatalog from '../../components/CartCatalog';
 import { Link } from 'react-router-dom';
 
 import { Container, CartDetail, CartItems, CartDetailHeader, CartDetailInfo } from './styles';
@@ -20,7 +20,7 @@ const Cart: React.FC = () => {
         </CartDetailInfo>
       </CartDetail>
       <CartItems>
-        <Catalog isCart />
+        <CartCatalog />
       </CartItems>
     </Container>
   );

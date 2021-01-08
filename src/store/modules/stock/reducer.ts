@@ -23,6 +23,17 @@ const stock: Reducer<IStockState> = (state = INITIAL_STATE, action) => {
 
         break;
       }
+      case ProductActions.removeOneFromStock: {
+        const { productName } = action.payload;
+
+        const productInStockIndex = draft.products.findIndex(item => item.title === productName);
+
+        if (productInStockIndex >= 0) {
+          draft.products[productInStockIndex].quantity -= 1;
+        }
+
+        break;
+      }
       default: {
         return draft;
       }

@@ -1,8 +1,8 @@
-import { ActionTypes, IProduct } from "./types";
+import { CartActions, IProduct } from "./types";
 
 export function addProductToCartRequest(product: IProduct) {
   return {
-    type: ActionTypes.addProductToCartRequest,
+    type: CartActions.addProductToCartRequest,
     payload: {
       product,
     }
@@ -11,18 +11,18 @@ export function addProductToCartRequest(product: IProduct) {
 
 export function addProductToCartSuccess(product: IProduct) {
   return {
-    type: ActionTypes.addProductToCartSuccess,
+    type: CartActions.addProductToCartSuccess,
     payload: {
       product,
     }
   };
 }
 
-export function addProductToCartFailure(productId: number) {
+export function addProductToCartFailure(productName: string) {
   return {
-    type: ActionTypes.addProductToCartFailure,
+    type: CartActions.addProductToCartFailure,
     payload: {
-      productId,
+      productName,
     }
   };
 }

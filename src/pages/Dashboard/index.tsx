@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Catalog from '../../components/Catalog';
+import StockCatalog from '../../components/StockCatalog';
 import Header from '../../components/Header';
 import ItemModal from '../../components/ItemModal';
 
@@ -12,7 +12,7 @@ function Dashboard() {
     <>
       <Container>
         <Header setAddItemOpen={setAddItemOpen} />
-        <Catalog />
+        <StockCatalog />
       </Container>
       <ItemModal open={addItemOpen} setAddItemOpen={setAddItemOpen} />
     </>
