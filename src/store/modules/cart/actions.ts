@@ -26,3 +26,22 @@ export function addProductToCartFailure(productName: string) {
     }
   };
 }
+
+export function removeProductFromCartRequest(product: IProduct, productQuantity: number) {
+  return {
+    type: CartActions.removeProductFromCartRequest,
+    payload: {
+      product,
+      productQuantity
+    }
+  };
+}
+
+export function removeProductFromCartSuccess(product: IProduct) {
+  return {
+    type: CartActions.removeProductFromCartSuccess,
+    payload: {
+      product,
+    }
+  };
+}

@@ -46,3 +46,19 @@ export const ItemButton = styled.button`
     opacity: 0.9;
   }
 `;
+
+export const RemoveButton = styled.button`
+  height: 20%;
+  padding: 10px;
+  border: 0;
+  background: #C72828;
+  color: #fff;
+
+  border-radius: 3px;
+
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.9;
+  }
+`;

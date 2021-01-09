@@ -31,6 +31,16 @@ const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => {
 
         break;
       }
+      case CartActions.removeProductFromCartSuccess: {
+        console.log('entrou')
+        const { product } = action.payload;
+
+        const productInCartIndex = draft.products.findIndex(item => item.item.title === product.title);
+
+        draft.products.splice(productInCartIndex, 1);
+
+        break;
+      }
       default: {
         return draft;
       }

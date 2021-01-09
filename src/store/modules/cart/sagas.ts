@@ -1,10 +1,11 @@
 import { all, select, takeLatest, put } from 'redux-saga/effects';
 import { IState } from '../..';
-import { removeOneFromStock } from '../stock/actions';
-import { addProductToCartFailure, addProductToCartRequest, addProductToCartSuccess } from './actions';
-import { CartActions } from './types';
+import { addProductToStock, removeOneFromStock } from '../stock/actions';
+import { addProductToCartFailure, addProductToCartRequest, addProductToCartSuccess, removeProductFromCartRequest, removeProductFromCartSuccess } from './actions';
+import { CartActions, ICartProduct } from './types';
 
 type CheckProductStockRequest = ReturnType<typeof addProductToCartRequest>;
+type RemoveProductFromCartRequest = ReturnType<typeof removeProductFromCartRequest>;
 
 function* checkProductStock({ payload }: CheckProductStockRequest) {
   const { product } = payload;
@@ -21,6 +22,19 @@ function* checkProductStock({ payload }: CheckProductStockRequest) {
   }
 }
 
+function* removeFromCart({ payload }: RemoveProductFromCartRequest) {
+  const { product, productQuantity } = payload;
+
+  if (productQuantity > 0) {
+    yield put(addProductToStock({
+      ...product,
+      quantity: productQuantity
+    }));
+    yield put(removeProductFromCartSuccess(product));
+  }
+}
+
 export default all([
   takeLatest(CartActions.addProductToCartRequest, checkProductStock),
+  takeLatest(CartActions.removeProductFromCartRequest, removeFromCart),
 ]);
